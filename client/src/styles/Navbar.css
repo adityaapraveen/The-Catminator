@@ -1,0 +1,118 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--background-color);
+  padding: var(--spacing-unit) calc(var(--spacing-unit) * 2);
+  border-bottom: 1px solid #333;
+  height: 5em;
+}
+
+.navbar-title {
+  color: var(--primary-accent);
+  font-size: 1.5em;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+}
+
+.navbar-title-icon img{
+  height: 2em;
+  width: 2em;
+  margin-top: 0.5em;
+  margin-right: var(--spacing-unit);
+}
+
+.navbar-links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+.navbar-links li {
+  margin-left: calc(var(--spacing-unit) * 2);
+}
+
+.navbar-links a,
+.logout-button {
+  color: var(--text-color);
+  text-decoration: none;
+  padding: var(--spacing-unit);
+  transition: color 0.3s ease;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1em;
+}
+
+.navbar-links a:hover,
+.logout-button:hover {
+  color: var(--primary-accent);
+}
+
+.logout-button {
+  padding: var(--spacing-unit) calc(var(--spacing-unit) * 1.5);
+  border: 1px solid var(--secondary-accent);
+  border-radius: 4px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.logout-button:hover {
+  background-color: var(--secondary-accent);
+  color: var(--background-color);
+}
+
+.hamburger-icon {
+  display: none; /* Hidden by default */
+  background: none;
+  border: none;
+  color: var(--primary-accent);
+  font-size: 2em;
+  cursor: pointer;
+  padding: var(--spacing-unit);
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column; /* Ensure main navbar content stacks vertically */
+    align-items: flex-start; /* Align items to the start */
+    height: auto; /* Adjust height based on content */
+  }
+
+  .navbar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%; /* Make header take full width */
+    padding: var(--spacing-unit) calc(var(--spacing-unit) * 2); /* Add padding */
+  }
+
+  .navbar-title {
+    width: auto; /* Let the title take necessary width */
+    justify-content: flex-start; /* Align title content to start */
+  }
+
+  .hamburger-icon {
+    display: block; /* Shown on small screens */
+  }
+
+  .navbar-links {
+    flex-direction: column;
+    width: 100%;
+    display: none; /* Hide by default on small screens */
+    padding: var(--spacing-unit) calc(var(--spacing-unit) * 2); /* Add padding to links */
+  }
+
+  .navbar-links.open {
+    display: flex; /* Show when the mobile menu is open */
+  }
+
+  .navbar-links li {
+    margin: 0.5em 0;
+  }
+
+  .navbar-links a, .logout-button {
+    padding: 0.5em 0;
+  }
+} 

@@ -1,0 +1,118 @@
+.scan-card {
+  border: 1px solid #333;
+  padding: calc(var(--spacing-unit) * 2);
+  margin-bottom: calc(var(--spacing-unit) * 2);
+  border-radius: 6px;
+  background-color: #2a2a2a; /* Slightly lighter dark */
+  color: var(--text-color);
+}
+
+.scan-card h3 {
+  color: var(--primary-accent);
+  border-bottom: 1px solid #444;
+  padding-bottom: var(--spacing-unit);
+  margin-bottom: calc(var(--spacing-unit) * 1.5);
+}
+
+.scan-card h4 {
+  color: var(--secondary-accent);
+  margin-top: calc(var(--spacing-unit) * 1.5);
+  margin-bottom: var(--spacing-unit);
+}
+
+.scan-card p, .scan-card li {
+  color: var(--text-color);
+  line-height: 1.5;
+  margin-bottom: calc(var(--spacing-unit) * 0.75);
+}
+
+.scan-card ul {
+  padding-left: calc(var(--spacing-unit) * 1.5);
+  margin-bottom: var(--spacing-unit);
+}
+
+.microlink-section,
+.whois-section,
+.ipinfo-section,
+.pagespeed-section,
+.issues-section {
+  border: 1px solid #383838;
+  padding: var(--spacing-unit) calc(var(--spacing-unit) * 1.5);
+  margin-bottom: calc(var(--spacing-unit) * 1.5);
+  border-radius: 4px;
+  background-color: #1f1f1f;
+}
+
+.issues-section {
+  border-color: #c0392b;
+  background-color: #332222;
+}
+
+.whois-section {
+  border-color: #444;
+  background-color: #282828;
+}
+
+.ipinfo-section {
+  border-color: #3498db;
+  background-color: #223333;
+}
+
+.pagespeed-section {
+  border-color: #f39c12;
+  background-color: #333322;
+}
+
+.scan-actions {
+  margin-top: calc(var(--spacing-unit) * 2);
+  text-align: right;
+  display: flex;
+  justify-content: flex-end;
+  gap: var(--spacing-unit);
+}
+
+.scan-actions button {
+  padding: calc(var(--spacing-unit) * 0.75) calc(var(--spacing-unit) * 1.25);
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.85em;
+  font-weight: bold;
+  transition: background-color 0.3s ease, opacity 0.3s ease;
+}
+
+.scan-actions button:first-child {
+  background-color: var(--secondary-accent);
+  color: var(--background-color);
+}
+
+.scan-actions button:last-child {
+  background-color: #c0392b;
+  color: var(--background-color);
+}
+
+.scan-actions button:hover {
+  opacity: 0.85;
+}
+
+.scan-card input[type="text"] {
+  padding: var(--spacing-unit);
+  border: 1px solid #555;
+  border-radius: 4px;
+  background-color: #333;
+  color: var(--text-color);
+  font-size: 1em;
+  width: 100%;
+  margin-top: var(--spacing-unit);
+}
+
+.scan-card input[type="text"]:focus {
+  outline: none;
+  border-color: var(--secondary-accent);
+  box-shadow: 0 0 0 3px rgba(var(--secondary-accent), 0.3);
+}
+
+.scan-result-image {
+  max-width: 100%;
+  height: auto;
+} 

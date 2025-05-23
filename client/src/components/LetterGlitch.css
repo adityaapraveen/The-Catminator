@@ -1,0 +1,13 @@
+.letter-glitch-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background-color: #000000;
+  overflow: hidden;
+}
+
+.letter-glitch-canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+} 

@@ -1,0 +1,53 @@
+@import './styles/_forms.css';
+
+:root {
+  --background-color: #1e1e1e;
+  --text-color: #e0e0e0;
+  --primary-accent: #faedcd; /* Gentle neon green */
+  --secondary-accent: #d83cf3; /* Soft pastel pink */
+  --spacing-unit: 8px;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+  line-height: 1.6;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: var(--primary-accent);
+}
+
+p {
+  margin-bottom: var(--spacing-unit);
+}
+
+a {
+  color: var(--secondary-accent);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.full-screen-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+.app-content {
+  position: relative; /* Needed to create a new stacking context */
+  z-index: 0; /* Ensure content is above the background */
+}
