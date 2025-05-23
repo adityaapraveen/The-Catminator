@@ -3,6 +3,9 @@ import axios from 'axios';
 import ScanCard from '../components/ScanCard';
 import '../styles/Dashboard.css';
 
+// Get backend URL from environment variable, default to relative path for dev proxy
+const BACKEND_URL = import.meta.env.VITE_BACKEND_URL || '';
+
 function DashboardPage() {
   const [url, setUrl] = useState('');
   const [scans, setScans] = useState([]);
@@ -20,7 +23,8 @@ function DashboardPage() {
           Authorization: `Bearer ${token}`,
         },
       };
-      const res = await axios.get('/api/scans', config);
+      // Use BACKEND_URL for the API call
+      const res = await axios.get(`${BACKEND_URL}/api/scans`, config);
       setScans(res.data);
     } catch (error) {
       console.error(error);
@@ -38,7 +42,8 @@ function DashboardPage() {
           Authorization: `Bearer ${token}`,
         },
       };
-      const res = await axios.post('/api/scans/', { url }, config);
+      // Use BACKEND_URL for the API call
+      const res = await axios.post(`${BACKEND_URL}/api/scans/`, { url }, config);
       setScans([res.data, ...scans]); // Add new scan to the top
       setUrl('');
     } catch (error) {
@@ -57,7 +62,8 @@ function DashboardPage() {
           Authorization: `Bearer ${token}`,
         },
       };
-      await axios.delete(`/api/scans/${id}`, config);
+      // Use BACKEND_URL for the API call
+      await axios.delete(`${BACKEND_URL}/api/scans/${id}`, config);
       setScans(scans.filter(scan => scan._id !== id));
     } catch (error) {
       console.error(error);
@@ -73,7 +79,8 @@ function DashboardPage() {
           Authorization: `Bearer ${token}`,
         },
       };
-      await axios.put(`/api/scans/${id}`, { note }, config);
+      // Use BACKEND_URL for the API call
+      await axios.put(`${BACKEND_URL}/api/scans/${id}`, { note }, config);
       setScans(scans.map(scan => (scan._id === id ? { ...scan, note } : scan)));
     } catch (error) {
       console.error(error);
