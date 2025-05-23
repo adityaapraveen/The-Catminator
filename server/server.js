@@ -20,7 +20,7 @@ mongoose.connect(process.env.MONGO_URI)
 const authRoutes = require('./routes/auth');
 const scanRoutes = require('./routes/scan');
 app.use('/api/auth', authRoutes);
-app.use('/api/scans', scanRoutes);
+app.use('api/scans', scanRoutes);
 // ... scan routes
 
 const PORT = process.env.PORT || 5000;

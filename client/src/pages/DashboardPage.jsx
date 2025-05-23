@@ -43,7 +43,7 @@ function DashboardPage() {
         },
       };
       // Use BACKEND_URL for the API call
-      const res = await axios.post(`${BACKEND_URL}/api/scans/`, { url }, config);
+      const res = await axios.post(`${BACKEND_URL}api/scans/`, { url }, config);
       setScans([res.data, ...scans]); // Add new scan to the top
       setUrl('');
     } catch (error) {
@@ -80,7 +80,7 @@ function DashboardPage() {
         },
       };
       // Use BACKEND_URL for the API call
-      await axios.put(`${BACKEND_URL}/api/scans/${id}`, { note }, config);
+      await axios.put(`${BACKEND_URL}api/scans/${id}`, { note }, config);
       setScans(scans.map(scan => (scan._id === id ? { ...scan, note } : scan)));
     } catch (error) {
       console.error(error);
